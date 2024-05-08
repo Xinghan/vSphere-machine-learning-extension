@@ -1,18 +1,18 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: kubeflow.community.tanzu.vmware.com.1.6.0
+  name: kubeflow.community.tanzu.vmware.com.1.8.1
 spec:
   refName: kubeflow.community.tanzu.vmware.com
-  version: 1.6.0
-  releaseNotes: Kubeflow 1.6.0 https://github.com/kubeflow/manifests/releases/tag/v1.6.0
+  version: 1.8.1
+  releaseNotes: Kubeflow 1.8.1 https://github.com/kubeflow/manifests/releases/tag/v1.8.1
   licenses:
   - Apache 2.0
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: projects.registry.vmware.com/kubeflow/kubeflow-carvel-testing:0.11
+          image: tiansiyuan/kubeflow-carvel-testing:0.12
       template:
       - ytt:
           paths:
@@ -64,11 +64,7 @@ spec:
             REDIRECT_URL:
               type: string
               description: AuthService will pass this URL to the OIDC provider when initiating an OIDC flow, so the OIDC provider knows where it needs to send the OIDC authorization code to. It defaults to AUTHSERVICE_URL_PREFIX/oidc/callback. This assumes that you have configured your API Gateway to pass all requests under a hostname to Authservice for authentication
-              default: /login/oidc
-            SKIP_AUTH_URI:
-              type: string
-              description: Comma-separated list of URL path-prefixes for which to bypass authentication. For example, if SKIP_AUTH_URL contains /my_app/ then requests to <url>/my_app/* are allowed without checking any credentials. Contains nothing by default
-              default: /dex
+              default: /authservice/oidc/callback
             USERID_CLAIM:
               type: string
               description: Claim whose value will be used as the userid (default email)
@@ -89,6 +85,18 @@ spec:
               type: string
               description: AuthService will use this Client Secret to authenticate itself against your OIDC provider in combination with CLIENT_ID when attempting to access your OIDC Provider's protected endpoints
               default: pUBnBOY80SnXgjibTYM9ZWNzY2xreNGQok
+            AUTHSERVICE_URL_PREFIX:
+              type: string
+              description: AUTHSERVICE_URL_PREFIX
+              default: /authservice/
+            SKIP_AUTH_URLS:
+              type: string
+              description: SKIP_AUTH_URLS
+              default: /dex
+            AFTER_LOGOUT_URL:
+              type: string
+              description: AFTER_LOGOUT_URL
+              default: /
         Dex:
           type: object
           additionalProperties: false
@@ -101,7 +109,7 @@ spec:
             config:
               type: string
               description: Configuration file of Dex
-              default: |-
+              default: |
                 issuer: http://dex.auth.svc.cluster.local:5556/dex
                 storage:
                   type: kubernetes
@@ -125,6 +133,6 @@ spec:
                 staticClients:
                 # https://github.com/dexidp/dex/pull/1664
                 - idEnv: OIDC_CLIENT_ID
-                  redirectURIs: ["/login/oidc"]
+                  redirectURIs: ["/authservice/oidc/callback"]
                   name: 'Dex Login Application'
                   secretEnv: OIDC_CLIENT_SECRET

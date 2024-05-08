@@ -22,9 +22,7 @@ OIDC_Authservice:
   #@schema/desc 'Comma-separated list of scopes to request access to. The openid scope is always added.'
   OIDC_SCOPES: "profile email groups"
   #@schema/desc 'AuthService will pass this URL to the OIDC provider when initiating an OIDC flow, so the OIDC provider knows where it needs to send the OIDC authorization code to. It defaults to AUTHSERVICE_URL_PREFIX/oidc/callback. This assumes that you have configured your API Gateway to pass all requests under a hostname to Authservice for authentication'
-  REDIRECT_URL: /login/oidc
-  #@schema/desc 'Comma-separated list of URL path-prefixes for which to bypass authentication. For example, if SKIP_AUTH_URL contains /my_app/ then requests to <url>/my_app/* are allowed without checking any credentials. Contains nothing by default'
-  SKIP_AUTH_URI: "/dex"
+  REDIRECT_URL: /authservice/oidc/callback
   #@schema/desc 'Claim whose value will be used as the userid (default email)'
   USERID_CLAIM: email
   #@schema/desc 'Name of the header containing the user-id that will be added to the upstream request'
@@ -35,6 +33,12 @@ OIDC_Authservice:
   OIDC_CLIENT_ID: kubeflow-oidc-authservice
   #@schema/desc 'AuthService will use this Client Secret to authenticate itself against your OIDC provider in combination with CLIENT_ID when attempting to access your OIDC Provider\'s protected endpoints'
   OIDC_CLIENT_SECRET: pUBnBOY80SnXgjibTYM9ZWNzY2xreNGQok
+  #@schema/desc 'AUTHSERVICE_URL_PREFIX'
+  AUTHSERVICE_URL_PREFIX: /authservice/
+  #@schema/desc 'SKIP_AUTH_URLS'
+  SKIP_AUTH_URLS: "/dex"
+  #@schema/desc 'AFTER_LOGOUT_URL'
+  AFTER_LOGOUT_URL: /
 
 #@schema/desc 'Configuration of Dex service'
 Dex:
@@ -65,6 +69,6 @@ Dex:
     staticClients:
     # https://github.com/dexidp/dex/pull/1664
     - idEnv: OIDC_CLIENT_ID
-      redirectURIs: ["/login/oidc"]
+      redirectURIs: ["/authservice/oidc/callback"]
       name: 'Dex Login Application'
       secretEnv: OIDC_CLIENT_SECRET
