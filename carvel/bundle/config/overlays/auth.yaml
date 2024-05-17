@@ -36,8 +36,6 @@ data:
   SKIP_AUTH_URLS: #@ data.values.OIDC_Authservice.SKIP_AUTH_URLS
   AFTER_LOGOUT_URL: #@ data.values.OIDC_Authservice.AFTER_LOGOUT_URL
   PORT: '"8080"'
-  #! REDIRECT_URL: #@ data.values.OIDC_Authservice.REDIRECT_URL
-  #! SKIP_AUTH_URI: #@ data.values.OIDC_Authservice.SKIP_AUTH_URI
   STORE_PATH: /var/lib/authservice/data.db
   USERID_CLAIM:  #@ data.values.OIDC_Authservice.USERID_CLAIM
   USERID_HEADER: #@ data.values.OIDC_Authservice.USERID_HEADER 
