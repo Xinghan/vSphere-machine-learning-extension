@@ -5,7 +5,7 @@ imageswap_labels: True
 
 service_type: "LoadBalancer"
 
-IP_address: "10.117.233.30"
+IP_address: ""
 
 CD_REGISTRATION_FLOW: True
 
