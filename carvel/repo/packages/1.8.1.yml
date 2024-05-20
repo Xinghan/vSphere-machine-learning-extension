@@ -12,7 +12,7 @@ spec:
     spec:
       fetch:
       - imgpkgBundle:
-          image: tiansiyuan/kubeflow-carvel-testing:0.12
+          image: tiansiyuan/kubeflow-carvel-testing:0.14
       template:
       - ytt:
           paths:

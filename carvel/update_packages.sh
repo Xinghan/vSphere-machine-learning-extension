@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x 
+# set -x 
 
 cd $(dirname $0)
 
@@ -8,8 +8,8 @@ cd $(dirname $0)
 # export IMGPKG_REPO=projects.registry.vmware.com/kubeflow/kubeflow-carvel-repo:0.12
 
 # this is where to put the images, however, we do not have the access yet. You can edit this to enable vmware.com repo.
-export IMGPKG_PACKAGE=tiansiyuan/kubeflow-carvel-testing:0.12
-export IMGPKG_REPO=tiansiyuan/kubeflow-carvel-repo:0.12
+export IMGPKG_PACKAGE=tiansiyuan/kubeflow-carvel-testing:0.14
+export IMGPKG_REPO=tiansiyuan/kubeflow-carvel-repo:0.14
 
 # export IMGPKG_PACKAGE=harbor-isvlab.liuqi.me/library/kubeflow-carvel-testing:0.12
 # export IMGPKG_REPO=harbor-isvlab.liuqi.me/library/kubeflow-carvel-repo:0.12

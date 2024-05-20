@@ -32,7 +32,7 @@ spec:
         image: projects.registry.vmware.com/kubeflow/notebook-controller:v1
 
 
-#@overlay/match by=overlay.subset({"kind": "ConfigMap", "metadata": {"name": "jupyter-web-app-config-hdc8b8c222", "namespace": "kubeflow"}}), expects=1
----
-data:
-  spawner_ui_config.yaml: #@ data.read("spawner_ui_config.conf")
+#! #@overlay/match by=overlay.subset({"kind": "ConfigMap", "metadata": {"name": "jupyter-web-app-config-hdc8b8c222", "namespace": "kubeflow"}}), expects=1
+#! ---
+#! data:
+#!   spawner_ui_config.yaml: #@ data.read("spawner_ui_config.conf")
