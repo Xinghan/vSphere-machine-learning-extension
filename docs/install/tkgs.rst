@@ -7,7 +7,7 @@ Install Kubeflow on vSphere
 This section guides you to install Kubeflow on vSphere.
 
 .. note::
-	In this section, we install Kubeflow on vSphere 1.6.1. Configurations are slightly different for other versions.
+	In this section, we install Kubeflow on vSphere 1.8.1. Configurations are slightly different for other versions.
 
 Prerequisites
 =============
@@ -34,7 +34,7 @@ Minimally required resources for TKG cluster to install Kubeflow
 
 To install Kubeflow, the TKG cluster must meet the following minimum requirements:
 
-- Kubernetes version 1.21, 1.22, 1.23, 1.24 or 1.25
+- Kubernetes version 1.21, 1.22, 1.23, 1.24, 1.25 and 1.26
 - At least one worker node satisfies below minimum resources requirements:
     - 4 CPU
     - 16GB memory
@@ -57,7 +57,7 @@ Add package repository
 	kubectl create ns carvel-kubeflow
 	kubectl config set-context --current --namespace=carvel-kubeflow
 
-	kctrl package repository add --repository kubeflow-carvel-repo --url projects.registry.vmware.com/kubeflow/kubeflow-carvel-repo:1.6.1
+	kctrl package repository add --repository kubeflow-carvel-repo --url projects.registry.vmware.com/kubeflow/kubeflow-carvel-repo:1.8.1
 
 If you get the error `kctrl: Error: the server could not find the requested resource (post packagerepositories.packaging.carvel.dev)`, this means the Carvel Custom Resource Definitions (CRD) have not been installed.
 You can do so by running:
@@ -111,7 +111,7 @@ Install Kubeflow on vSphere package
       --wait-timeout 30m0s \
       --package-install kubeflow \
       --package kubeflow.community.tanzu.vmware.com \
-      --version 1.6.1 \
+      --version 1.8.1 \
       --values-file config.yaml
 
 This takes a few minutes, so please wait patiently. You see a "Succeeded" message in the end if the installation is successful.
@@ -156,9 +156,9 @@ To access Kubeflow on vSphere, you need to get the IP address of the service. Th
 
       # example output:
       # NAME                                                      STATUS   ROLES                  AGE   VERSION            INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
-      # v1a2-v1-23-8-tkc-v100-8c-dcpvc-4zct9                      Ready    control-plane,master   26d   v1.23.8+vmware.2   10.105.151.73   <none>        Ubuntu 20.04.4 LTS   5.4.0-124-generic   containerd://1.6.6
-      # v1a2-v1-23-8-tkc-v100-8c-workers-zwfx4-77b7df85f7-f7f6f   Ready    <none>                 26d   v1.23.8+vmware.2   10.105.151.74   <none>        Ubuntu 20.04.4 LTS   5.4.0-124-generic   containerd://1.6.6
-      # v1a2-v1-23-8-tkc-v100-8c-workers-zwfx4-77b7df85f7-l5mp5   Ready    <none>                 26d   v1.23.8+vmware.2   10.105.151.75   <none>        Ubuntu 20.04.4 LTS   5.4.0-124-generic   containerd://1.6.6
+      # v1a2-v1-23-8-tkc-v100-8c-dcpvc-4zct9                      Ready    control-plane,master   26d   v1.23.8+vmware.2   10.105.151.73   <none>        Ubuntu 20.04.4 LTS   5.4.0-124-generic   containerd://1.8.6
+      # v1a2-v1-23-8-tkc-v100-8c-workers-zwfx4-77b7df85f7-f7f6f   Ready    <none>                 26d   v1.23.8+vmware.2   10.105.151.74   <none>        Ubuntu 20.04.4 LTS   5.4.0-124-generic   containerd://1.8.6
+      # v1a2-v1-23-8-tkc-v100-8c-workers-zwfx4-77b7df85f7-l5mp5   Ready    <none>                 26d   v1.23.8+vmware.2   10.105.151.75   <none>        Ubuntu 20.04.4 LTS   5.4.0-124-generic   containerd://1.8.6
 
       ## In this example, anyone of the following works:
       # http://10.105.151.73:30926
@@ -297,7 +297,7 @@ To inspect values schema (configurations) of the Kubeflow on vSphere package, ru
 
 .. code-block:: shell
 
-	kctrl package available get -p kubeflow.community.tanzu.vmware.com/1.6.1 --values-schema
+	kctrl package available get -p kubeflow.community.tanzu.vmware.com/1.8.1 --values-schema
 
 We summarize some important values schema in below table.
 
