@@ -8,7 +8,7 @@ spec:
   shortDescription: "The Machine Learning Toolkit for Kubernetes"
   providerName: VMware
   maintainers:
-    - name: Jinheng Xu
+    - name: Jinheng Xu Siyuan Tian
   categories:
     - machine learning
     - MLOps
