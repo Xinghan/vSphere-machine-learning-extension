@@ -72,3 +72,10 @@ Dex:
       redirectURIs: ["/authservice/oidc/callback"]
       name: 'Dex Login Application'
       secretEnv: OIDC_CLIENT_SECRET
+
+#@schema/desc 'Docker service account'
+Docker:
+  #@schema/desc 'If use private docker account'
+  use_private: False
+  #@schema/desc 'docker config json'
+  dockerconfigjson: ""
