@@ -78,4 +78,4 @@ Docker:
   #@schema/desc 'If use private docker account'
   use_private: False
   #@schema/desc 'docker config json'
-  dockerconfigjson: ""
+  dockerconfigjson: "eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJ4aW5naGFuIiwicGFzc3dvcmQiOiJjMXgyaDM0MTk4NTAyMDghIiwiZW1haWwiOiJ4aW5naGFuLmN1aUBnbWFpbC5jb20iLCJhdXRoIjoiYmFzZTY0KHVzZXJuYW1lOnBhc3N3b3JkKSJ9fX0="

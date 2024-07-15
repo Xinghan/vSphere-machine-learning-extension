@@ -3,16 +3,16 @@ kind: Namespace
 metadata:
   name: auth
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: authcodes.dex.coreos.com
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 spec:
   group: dex.coreos.com
   names:
@@ -36,16 +36,16 @@ metadata:
   name: dex
   namespace: auth
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: dex
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 rules:
 - apiGroups:
   - dex.coreos.com
@@ -65,8 +65,8 @@ kind: ClusterRoleBinding
 metadata:
   name: dex
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -102,7 +102,7 @@ data:
     staticClients:
     # https://github.com/dexidp/dex/pull/1664
     - idEnv: OIDC_CLIENT_ID
-      redirectURIs: ["/login/oidc"]
+      redirectURIs: ["/authservice/oidc/callback"]
       name: 'Dex Login Application'
       secretEnv: OIDC_CLIENT_SECRET
 kind: ConfigMap
@@ -110,8 +110,8 @@ metadata:
   name: dex
   namespace: auth
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 ---
 apiVersion: v1
 data:
@@ -122,8 +122,8 @@ metadata:
   name: dex-oidc-client
   namespace: auth
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 type: Opaque
 ---
 apiVersion: v1
@@ -132,18 +132,17 @@ metadata:
   name: dex
   namespace: auth
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 spec:
   ports:
   - name: dex
-    nodePort: 32000
     port: 5556
     protocol: TCP
     targetPort: 5556
   selector:
     app: dex
-  type: NodePort
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -153,8 +152,8 @@ metadata:
   name: dex
   namespace: auth
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 spec:
   replicas: 1
   selector:
@@ -178,7 +177,7 @@ spec:
         envFrom:
         - secretRef:
             name: dex-oidc-client
-        image: ghcr.io/dexidp/dex:v2.31.2
+        image: ghcr.io/dexidp/dex:v2.36.0
         name: dex
         ports:
         - containerPort: 5556
@@ -201,8 +200,8 @@ metadata:
   name: dex
   namespace: auth
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-3
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-2
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-4
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-3
 spec:
   gateways:
   - kubeflow/kubeflow-gateway

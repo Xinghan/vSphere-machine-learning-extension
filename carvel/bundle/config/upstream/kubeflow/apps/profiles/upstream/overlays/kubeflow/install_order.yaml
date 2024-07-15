@@ -3,8 +3,8 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
   creationTimestamp: null
   labels:
     kustomize.component: profiles
@@ -266,8 +266,8 @@ metadata:
   name: profiles-controller-service-account
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -277,8 +277,8 @@ metadata:
   name: profiles-leader-election-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 rules:
 - apiGroups:
   - ""
@@ -315,8 +315,8 @@ metadata:
   name: profiles-leader-election-rolebinding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -333,8 +333,8 @@ metadata:
     kustomize.component: profiles
   name: profiles-cluster-rolebinding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -369,15 +369,18 @@ kind: ConfigMap
 metadata:
   labels:
     kustomize.component: profiles
-  name: namespace-labels-data-54d54k5788
+  name: namespace-labels-data-4df5t8mdgf
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 ---
 apiVersion: v1
 data:
   ADMIN: ""
+  ISTIO_INGRESS_GATEWAY_PRINCIPAL: cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+  KFP_UI_PRINCIPAL: cluster.local/ns/kubeflow/sa/ml-pipeline-ui
+  NOTEBOOK_CONTROLLER_PRINCIPAL: cluster.local/ns/kubeflow/sa/notebook-controller-service-account
   USERID_HEADER: kubeflow-userid
   USERID_PREFIX: ""
   WORKLOAD_IDENTITY: ""
@@ -385,11 +388,11 @@ kind: ConfigMap
 metadata:
   labels:
     kustomize.component: profiles
-  name: profiles-config-2g29dd2mbd
+  name: profiles-config-5h9m86f79f
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 ---
 apiVersion: v1
 kind: Service
@@ -399,8 +402,8 @@ metadata:
   name: profiles-kfam
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 spec:
   ports:
   - port: 8081
@@ -415,8 +418,8 @@ metadata:
   name: profiles-deployment
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 spec:
   replicas: 1
   selector:
@@ -440,9 +443,9 @@ spec:
         - $(USERID_PREFIX)
         envFrom:
         - configMapRef:
-            name: profiles-config-2g29dd2mbd
-        image: docker.io/kubeflownotebookswg/kfam:v1.6.0
-        imagePullPolicy: Always
+            name: profiles-config-5h9m86f79f
+        image: docker.io/kubeflownotebookswg/kfam:v1.8.0
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /metrics
@@ -464,9 +467,9 @@ spec:
         - $(WORKLOAD_IDENTITY)
         envFrom:
         - configMapRef:
-            name: profiles-config-2g29dd2mbd
-        image: docker.io/kubeflownotebookswg/profile-controller:v1.6.0
-        imagePullPolicy: Always
+            name: profiles-config-5h9m86f79f
+        image: docker.io/kubeflownotebookswg/profile-controller:v1.8.0
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /healthz
@@ -489,7 +492,7 @@ spec:
       serviceAccountName: profiles-controller-service-account
       volumes:
       - configMap:
-          name: namespace-labels-data-54d54k5788
+          name: namespace-labels-data-4df5t8mdgf
         name: namespace-labels
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -500,8 +503,8 @@ metadata:
   name: profiles-kfam
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 spec:
   gateways:
   - kubeflow-gateway
@@ -531,8 +534,8 @@ metadata:
   name: profiles-kfam
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-9
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-8
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
 spec:
   action: ALLOW
   rules:

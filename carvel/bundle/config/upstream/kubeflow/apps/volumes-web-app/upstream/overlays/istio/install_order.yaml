@@ -7,8 +7,8 @@ metadata:
   name: volumes-web-app-service-account
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -18,8 +18,8 @@ metadata:
     kustomize.component: volumes-web-app
   name: volumes-web-app-cluster-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - ""
@@ -61,6 +61,21 @@ rules:
   - events
   verbs:
   - list
+- apiGroups:
+  - kubeflow.org
+  resources:
+  - notebooks
+  verbs:
+  - list
+- apiGroups:
+  - kubeflow.org
+  resources:
+  - pvcviewers
+  verbs:
+  - get
+  - list
+  - create
+  - delete
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -71,8 +86,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-admin: "true"
   name: volumes-web-app-kubeflow-volume-ui-admin
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules: []
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -84,8 +99,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-edit: "true"
   name: volumes-web-app-kubeflow-volume-ui-edit
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - ""
@@ -99,6 +114,15 @@ rules:
   - watch
   - update
   - patch
+- apiGroups:
+  - kubeflow.org
+  resources:
+  - pvcviewers
+  verbs:
+  - get
+  - list
+  - create
+  - delete
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -109,8 +133,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"
   name: volumes-web-app-kubeflow-volume-ui-view
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - ""
@@ -128,6 +152,13 @@ rules:
   - get
   - list
   - watch
+- apiGroups:
+  - kubeflow.org
+  resources:
+  - pvcviewers
+  verbs:
+  - get
+  - list
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -137,8 +168,8 @@ metadata:
     kustomize.component: volumes-web-app
   name: volumes-web-app-cluster-role-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -160,11 +191,71 @@ metadata:
   labels:
     app: volumes-web-app
     kustomize.component: volumes-web-app
-  name: volumes-web-app-parameters-dbh9dmt5gt
+  name: volumes-web-app-parameters-57h65c44mg
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
+---
+apiVersion: v1
+data:
+  viewer-spec.yaml: |
+    # Note: the volumes-web-app allows expanding strings using ${VAR_NAME}
+    # You may use any environment variable. This lets us e.g. specify images that can be modified using kustomize's image transformer.
+    # Additionally, 'PVC_NAME', 'NAME' and 'NAMESPACE' are defined
+    # Name of the pvc is set by the volumes web app
+    pvc: $NAME
+    podSpec:
+      serviceAccountName: default-editor
+      containers:
+        - name: main
+          image: $VOLUME_VIEWER_IMAGE
+          env:
+            - name: FB_ADDRESS
+              value: "0.0.0.0"
+            - name: FB_PORT
+              value: "8080"
+            - name: FB_DATABASE
+              value: /tmp/filebrowser.db
+            - name: FB_NOAUTH
+              value: "true"
+            - name: FB_BASEURL
+              value: /pvcviewers/$NAMESPACE/$NAME/
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 2
+            periodSeconds: 10
+          # viewer-volume is provided automatically by the volumes web app
+          volumeMounts:
+            - name: viewer-volume
+              mountPath: /srv
+          workingDir: /srv
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: viewer-volume
+          persistentVolumeClaim:
+            claimName: $NAME
+    networking:
+      targetPort: 8080
+      basePrefix: "/pvcviewers"
+      rewrite: "/"
+      timeout: 30s
+    rwoScheduling: true
+kind: ConfigMap
+metadata:
+  labels:
+    app: volumes-web-app
+    kustomize.component: volumes-web-app
+  name: volumes-web-app-viewer-spec-gm954c98h6
+  namespace: kubeflow
+  annotations:
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: v1
 kind: Service
@@ -176,8 +267,8 @@ metadata:
   name: volumes-web-app-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   ports:
   - name: http
@@ -198,8 +289,8 @@ metadata:
   name: volumes-web-app-deployment
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   replicas: 1
   selector:
@@ -208,8 +299,6 @@ spec:
       kustomize.component: volumes-web-app
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "false"
       labels:
         app: volumes-web-app
         kustomize.component: volumes-web-app
@@ -223,12 +312,39 @@ spec:
         - name: USERID_PREFIX
           value: ""
         - name: APP_SECURE_COOKIES
-          value: $(VWA_APP_SECURE_COOKIES)
-        image: docker.io/kubeflownotebookswg/volumes-web-app:v1.6.0
+          value: "true"
+        - name: VOLUME_VIEWER_IMAGE
+          value: filebrowser/filebrowser:v2.23.0
+        image: docker.io/kubeflownotebookswg/volumes-web-app:v1.8.0
         name: volumes-web-app
         ports:
         - containerPort: 5000
+        volumeMounts:
+        - mountPath: /etc/config/viewer-spec.yaml
+          name: viewer-spec
+          subPath: viewer-spec.yaml
       serviceAccountName: volumes-web-app-service-account
+      volumes:
+      - configMap:
+          name: volumes-web-app-viewer-spec-gm954c98h6
+        name: viewer-spec
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  labels:
+    app: volumes-web-app
+    kustomize.component: volumes-web-app
+  name: volumes-web-app
+  namespace: kubeflow
+  annotations:
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
+spec:
+  host: volumes-web-app-service.kubeflow.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -239,8 +355,8 @@ metadata:
   name: volumes-web-app-volumes-web-app
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   gateways:
   - kubeflow-gateway
@@ -261,3 +377,25 @@ spec:
         host: volumes-web-app-service.kubeflow.svc.cluster.local
         port:
           number: 80
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  labels:
+    app: volumes-web-app
+    kustomize.component: volumes-web-app
+  name: volumes-web-app
+  namespace: kubeflow
+  annotations:
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
+spec:
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals:
+        - cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+  selector:
+    matchLabels:
+      app: volumes-web-app

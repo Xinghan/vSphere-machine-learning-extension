@@ -34,38 +34,3 @@ subjects:
   apiGroup: rbac.authorization.k8s.io
   name: #@ 'system:serviceaccounts:'+namespaces[i]
 #@ end
-
-
-#@ load("@ytt:data", "data")
-#@ load("@ytt:overlay", "overlay")
-
-#@ namespaces2=[
-#@  'auth',
-#@  'cert-manager',
-#@  'istio-system',
-#@  'knative-eventing',
-#@  'knative-serving',
-#@  'kubeflow',
-#@  'kubeflow-user-example-com',
-#@  ]
-
-
-
-#@ for i in range(len(namespaces2)):
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: docker-io-secret
-  namespace: #@ namespaces2[i]
-data:
-  .dockerconfigjson: #@ data.values.dockerconfigjson
-type: kubernetes.io/dockerconfigjson
-#@ end
-
----
-
-#@overlay/match by=overlay.subset({"kind": "ServiceAccount", "metadata": {"name": default, "namespace": default}})
----
-imagePullSecrets:
-  -name: docker-io-secret

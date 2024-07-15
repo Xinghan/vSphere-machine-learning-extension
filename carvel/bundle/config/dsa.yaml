@@ -1,0 +1,25 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:overlay", "overlay")
+
+#@ namespaces=[
+#@  'auth',
+#@  'cert-manager',
+#@  'istio-system',
+#@  'knative-eventing',
+#@  'knative-serving',
+#@  'kubeflow',
+#@  'kubeflow-user-example-com',
+#@  ]
+
+
+#@ for i in range(len(namespaces)):
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: docker-io-secret
+  namespace: #@ namespaces[i]
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: #@ data.values.Docker.dockerconfigjson
+#@ end

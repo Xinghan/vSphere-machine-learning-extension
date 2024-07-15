@@ -7,8 +7,8 @@ kind: ClusterRole
 metadata:
   name: kubeflow-admin
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-6
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-5
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules: []
 ---
 aggregationRule:
@@ -22,8 +22,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-admin: "true"
   name: kubeflow-edit
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-6
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-5
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules: []
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -33,8 +33,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-admin: "true"
   name: kubeflow-kubernetes-admin
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-6
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-5
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules:
 - apiGroups:
   - authorization.k8s.io
@@ -64,8 +64,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-edit: "true"
   name: kubeflow-kubernetes-edit
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-6
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-5
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules:
 - apiGroups:
   - ""
@@ -203,8 +203,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"
   name: kubeflow-kubernetes-view
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-6
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-5
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules:
 - apiGroups:
   - ""
@@ -336,6 +336,6 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-edit: "true"
   name: kubeflow-view
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-6
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-5
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules: []

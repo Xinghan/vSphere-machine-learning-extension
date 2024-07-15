@@ -4,18 +4,18 @@ data:
   user: user@example.com
 kind: ConfigMap
 metadata:
-  name: default-install-config-5cbhhbttg4
+  name: default-install-config-9h2h2b6hbk
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: kubeflow.org/v1beta1
 kind: Profile
 metadata:
   name: kubeflow-user-example-com
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   owner:
     kind: User

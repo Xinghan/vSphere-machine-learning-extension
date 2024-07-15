@@ -3,8 +3,8 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
   creationTimestamp: null
   labels:
     app: notebook-controller
@@ -9425,8 +9425,8 @@ metadata:
   name: notebook-controller-service-account
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -9437,8 +9437,8 @@ metadata:
   name: notebook-controller-leader-election-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - ""
@@ -9480,8 +9480,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-admin: "true"
   name: notebook-controller-kubeflow-notebooks-admin
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules: []
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -9494,8 +9494,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-notebooks-admin: "true"
   name: notebook-controller-kubeflow-notebooks-edit
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - kubeflow.org
@@ -9521,8 +9521,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"
   name: notebook-controller-kubeflow-notebooks-view
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - kubeflow.org
@@ -9543,8 +9543,8 @@ metadata:
     kustomize.component: notebook-controller
   name: notebook-controller-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - apps
@@ -9600,8 +9600,8 @@ metadata:
   name: notebook-controller-leader-election-rolebinding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -9619,8 +9619,8 @@ metadata:
     kustomize.component: notebook-controller
   name: notebook-controller-role-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -9632,18 +9632,22 @@ subjects:
 ---
 apiVersion: v1
 data:
+  CLUSTER_DOMAIN: cluster.local
+  CULL_IDLE_TIME: "1440"
+  ENABLE_CULLING: "false"
+  IDLENESS_CHECK_PERIOD: "1"
   ISTIO_GATEWAY: kubeflow/kubeflow-gateway
   USE_ISTIO: "true"
 kind: ConfigMap
 metadata:
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     app: notebook-controller
     kustomize.component: notebook-controller
-  name: notebook-controller-config-kkt88f2bhb
+  name: notebook-controller-config-dm5b6dd458
   namespace: kubeflow
+  annotations:
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: v1
 kind: Service
@@ -9654,8 +9658,8 @@ metadata:
   name: notebook-controller-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   ports:
   - port: 443
@@ -9672,8 +9676,8 @@ metadata:
   name: notebook-controller-deployment
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   selector:
     matchLabels:
@@ -9693,14 +9697,34 @@ spec:
           valueFrom:
             configMapKeyRef:
               key: USE_ISTIO
-              name: notebook-controller-config-kkt88f2bhb
+              name: notebook-controller-config-dm5b6dd458
         - name: ISTIO_GATEWAY
           valueFrom:
             configMapKeyRef:
               key: ISTIO_GATEWAY
-              name: notebook-controller-config-kkt88f2bhb
-        image: docker.io/kubeflownotebookswg/notebook-controller:v1.6.0
-        imagePullPolicy: Always
+              name: notebook-controller-config-dm5b6dd458
+        - name: CLUSTER_DOMAIN
+          valueFrom:
+            configMapKeyRef:
+              key: CLUSTER_DOMAIN
+              name: notebook-controller-config-dm5b6dd458
+        - name: ENABLE_CULLING
+          valueFrom:
+            configMapKeyRef:
+              key: ENABLE_CULLING
+              name: notebook-controller-config-dm5b6dd458
+        - name: CULL_IDLE_TIME
+          valueFrom:
+            configMapKeyRef:
+              key: CULL_IDLE_TIME
+              name: notebook-controller-config-dm5b6dd458
+        - name: IDLENESS_CHECK_PERIOD
+          valueFrom:
+            configMapKeyRef:
+              key: IDLENESS_CHECK_PERIOD
+              name: notebook-controller-config-dm5b6dd458
+        image: docker.io/kubeflownotebookswg/notebook-controller:v1.8.0
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /healthz

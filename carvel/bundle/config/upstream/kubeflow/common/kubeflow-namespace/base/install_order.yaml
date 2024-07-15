@@ -6,5 +6,5 @@ metadata:
     istio-injection: enabled
   name: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-6
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-5
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6

@@ -3,8 +3,8 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
   creationTimestamp: null
   labels:
     app: tensorboard-controller
@@ -89,8 +89,8 @@ metadata:
   name: tensorboard-controller-controller-manager
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -101,8 +101,8 @@ metadata:
   name: tensorboard-controller-leader-election-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - ""
@@ -145,8 +145,8 @@ metadata:
     kustomize.component: tensorboard-controller
   name: tensorboard-controller-manager-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - apps
@@ -229,8 +229,8 @@ metadata:
     kustomize.component: tensorboard-controller
   name: tensorboard-controller-metrics-reader
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - nonResourceURLs:
   - /metrics
@@ -245,8 +245,8 @@ metadata:
     kustomize.component: tensorboard-controller
   name: tensorboard-controller-proxy-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - authentication.k8s.io
@@ -270,8 +270,8 @@ metadata:
   name: tensorboard-controller-leader-election-rolebinding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -289,8 +289,8 @@ metadata:
     kustomize.component: tensorboard-controller
   name: tensorboard-controller-manager-rolebinding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -308,8 +308,8 @@ metadata:
     kustomize.component: tensorboard-controller
   name: tensorboard-controller-proxy-rolebinding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -323,14 +323,14 @@ apiVersion: v1
 data:
   ISTIO_GATEWAY: kubeflow/kubeflow-gateway
   RWO_PVC_SCHEDULING: "True"
-  TENSORBOARD_IMAGE: tensorflow/tensorflow:2.1.0
+  TENSORBOARD_IMAGE: tensorflow/tensorflow:2.5.1
 kind: ConfigMap
 metadata:
-  name: tensorboard-controller-config-fm46g724mf
+  name: tensorboard-controller-config-b98cb9gk9k
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: v1
 kind: Service
@@ -342,8 +342,8 @@ metadata:
   name: tensorboard-controller-controller-manager-metrics-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   ports:
   - name: https
@@ -365,8 +365,8 @@ metadata:
   name: tensorboard-controller-deployment
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   replicas: 1
   selector:
@@ -385,32 +385,14 @@ spec:
     spec:
       containers:
       - args:
-        - --secure-listen-address=0.0.0.0:8443
-        - --upstream=http://127.0.0.1:8080/
-        - --logtostderr=true
-        - --v=0
-        image: gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0
-        name: kube-rbac-proxy
-        ports:
-        - containerPort: 8443
-          name: https
-          protocol: TCP
-        resources:
-          limits:
-            cpu: 500m
-            memory: 128Mi
-          requests:
-            cpu: 5m
-            memory: 64Mi
-      - args:
         - --health-probe-bind-address=:8081
         - --metrics-bind-address=127.0.0.1:8080
         command:
         - /manager
         envFrom:
         - configMapRef:
-            name: tensorboard-controller-config-fm46g724mf
-        image: docker.io/kubeflownotebookswg/tensorboard-controller:v1.6.0
+            name: tensorboard-controller-config-b98cb9gk9k
+        image: docker.io/kubeflownotebookswg/tensorboard-controller:v1.8.0
         livenessProbe:
           httpGet:
             path: /healthz
@@ -433,6 +415,24 @@ spec:
             memory: 64Mi
         securityContext:
           allowPrivilegeEscalation: false
+      - args:
+        - --secure-listen-address=0.0.0.0:8443
+        - --upstream=http://127.0.0.1:8080/
+        - --logtostderr=true
+        - --v=0
+        image: gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0
+        name: kube-rbac-proxy
+        ports:
+        - containerPort: 8443
+          name: https
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+          requests:
+            cpu: 5m
+            memory: 64Mi
       securityContext:
         runAsNonRoot: true
         runAsUser: 999

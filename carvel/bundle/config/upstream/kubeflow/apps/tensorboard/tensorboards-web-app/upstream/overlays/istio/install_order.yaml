@@ -7,8 +7,8 @@ metadata:
   name: tensorboards-web-app-service-account
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -18,8 +18,8 @@ metadata:
     kustomize.component: tensorboards-web-app
   name: tensorboards-web-app-cluster-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - ""
@@ -61,6 +61,14 @@ rules:
   - get
   - list
   - watch
+- apiGroups:
+  - kubeflow.org
+  resources:
+  - poddefaults
+  verbs:
+  - get
+  - list
+  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -71,8 +79,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-admin: "true"
   name: tensorboards-web-app-kubeflow-tensorboard-ui-admin
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules: []
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -84,8 +92,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-edit: "true"
   name: tensorboards-web-app-kubeflow-tensorboard-ui-edit
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - tensorboard.kubeflow.org
@@ -97,6 +105,14 @@ rules:
   - list
   - create
   - delete
+- apiGroups:
+  - kubeflow.org
+  resources:
+  - poddefaults
+  verbs:
+  - get
+  - list
+  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -107,8 +123,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"
   name: tensorboards-web-app-kubeflow-tensorboard-ui-view
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 rules:
 - apiGroups:
   - tensorboard.kubeflow.org
@@ -126,6 +142,14 @@ rules:
   - get
   - list
   - watch
+- apiGroups:
+  - kubeflow.org
+  resources:
+  - poddefaults
+  verbs:
+  - get
+  - list
+  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -135,8 +159,8 @@ metadata:
     kustomize.component: tensorboards-web-app
   name: tensorboards-web-app-cluster-role-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -158,11 +182,11 @@ metadata:
   labels:
     app: tensorboards-web-app
     kustomize.component: tensorboards-web-app
-  name: tensorboards-web-app-parameters-c8ttmfh2f8
+  name: tensorboards-web-app-parameters-642bbg7t66
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 ---
 apiVersion: v1
 kind: Service
@@ -174,8 +198,8 @@ metadata:
   name: tensorboards-web-app-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   ports:
   - name: http
@@ -196,8 +220,8 @@ metadata:
   name: tensorboards-web-app-deployment
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   replicas: 1
   selector:
@@ -206,8 +230,6 @@ spec:
       kustomize.component: tensorboards-web-app
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "false"
       labels:
         app: tensorboards-web-app
         kustomize.component: tensorboards-web-app
@@ -221,12 +243,29 @@ spec:
         - name: USERID_PREFIX
           value: ""
         - name: APP_SECURE_COOKIES
-          value: $(TWA_APP_SECURE_COOKIES)
-        image: docker.io/kubeflownotebookswg/tensorboards-web-app:v1.6.0
+          value: 'true '
+        image: docker.io/kubeflownotebookswg/tensorboards-web-app:v1.8.0
         name: tensorboards-web-app
         ports:
         - containerPort: 5000
       serviceAccountName: tensorboards-web-app-service-account
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  labels:
+    app: tensorboards-web-app
+    kustomize.component: tensorboards-web-app
+  name: tensorboards-web-app
+  namespace: kubeflow
+  annotations:
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
+spec:
+  host: tensorboards-web-app-service.kubeflow.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -237,8 +276,8 @@ metadata:
   name: tensorboards-web-app-tensorboards-web-app
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-10
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-9
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
 spec:
   gateways:
   - kubeflow-gateway
@@ -259,3 +298,25 @@ spec:
         host: tensorboards-web-app-service.kubeflow.svc.cluster.local
         port:
           number: 80
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  labels:
+    app: tensorboards-web-app
+    kustomize.component: tensorboards-web-app
+  name: tensorboards-web-app
+  namespace: kubeflow
+  annotations:
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-11
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-10
+spec:
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals:
+        - cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+  selector:
+    matchLabels:
+      app: tensorboards-web-app

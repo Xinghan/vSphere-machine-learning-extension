@@ -1,12 +1,13 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: apiextensions.k8s.io|CustomResourceDefinition|default|clusterworkflowtemplates.argoproj.io
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: clusterworkflowtemplates.argoproj.io
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 spec:
   group: argoproj.io
   names:
@@ -45,8 +46,8 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     api-approved.kubernetes.io: unapproved, request not yet submitted
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
     kustomize.component: metacontroller
@@ -295,8 +296,8 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     api-approved.kubernetes.io: unapproved, request not yet submitted
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
     kustomize.component: metacontroller
@@ -359,12 +360,13 @@ status:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: apiextensions.k8s.io|CustomResourceDefinition|default|cronworkflows.argoproj.io
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: cronworkflows.argoproj.io
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 spec:
   group: argoproj.io
   names:
@@ -407,8 +409,8 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     api-approved.kubernetes.io: unapproved, request not yet submitted
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
     kustomize.component: metacontroller
@@ -641,8 +643,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: scheduledworkflows.kubeflow.org
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   group: kubeflow.org
   names:
@@ -688,8 +690,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: viewers.kubeflow.org
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   group: kubeflow.org
   names:
@@ -724,12 +726,13 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: apiextensions.k8s.io|CustomResourceDefinition|default|workfloweventbindings.argoproj.io
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: workfloweventbindings.argoproj.io
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 spec:
   group: argoproj.io
   names:
@@ -765,12 +768,13 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: apiextensions.k8s.io|CustomResourceDefinition|default|workflows.argoproj.io
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: workflows.argoproj.io
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 spec:
   group: argoproj.io
   names:
@@ -821,12 +825,13 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: apiextensions.k8s.io|CustomResourceDefinition|default|workflowtaskresults.argoproj.io
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: workflowtaskresults.argoproj.io
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 spec:
   group: argoproj.io
   names:
@@ -1252,12 +1257,13 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: apiextensions.k8s.io|CustomResourceDefinition|default|workflowtasksets.argoproj.io
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: workflowtasksets.argoproj.io
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 spec:
   group: argoproj.io
   names:
@@ -1299,12 +1305,13 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: apiextensions.k8s.io|CustomResourceDefinition|default|workflowtemplates.argoproj.io
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: workflowtemplates.argoproj.io
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 spec:
   group: argoproj.io
   names:
@@ -1340,13 +1347,14 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: '|ServiceAccount|default|argo'
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: argo
   namespace: kubeflow
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1359,8 +1367,8 @@ metadata:
   name: kubeflow-pipelines-cache
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1372,8 +1380,8 @@ metadata:
   name: kubeflow-pipelines-cache-deployer-sa
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1385,8 +1393,8 @@ metadata:
   name: kubeflow-pipelines-container-builder
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1398,8 +1406,8 @@ metadata:
   name: kubeflow-pipelines-metadata-writer
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1411,8 +1419,8 @@ metadata:
   name: kubeflow-pipelines-viewer
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1423,8 +1431,8 @@ metadata:
   name: meta-controller-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1434,8 +1442,8 @@ metadata:
   name: metadata-grpc-server
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1447,8 +1455,8 @@ metadata:
   name: ml-pipeline
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1460,8 +1468,8 @@ metadata:
   name: ml-pipeline-persistenceagent
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1473,8 +1481,8 @@ metadata:
   name: ml-pipeline-scheduledworkflow
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1486,8 +1494,8 @@ metadata:
   name: ml-pipeline-ui
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1499,8 +1507,8 @@ metadata:
   name: ml-pipeline-viewer-crd-service-account
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1512,8 +1520,8 @@ metadata:
   name: ml-pipeline-visualizationserver
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1523,8 +1531,8 @@ metadata:
   name: mysql
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -1536,19 +1544,20 @@ metadata:
   name: pipeline-runner
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: rbac.authorization.k8s.io|Role|default|argo-role
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: argo-role
   namespace: kubeflow
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules:
 - apiGroups:
   - coordination.k8s.io
@@ -1576,8 +1585,8 @@ metadata:
   name: kubeflow-pipelines-cache-deployer-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -1601,8 +1610,8 @@ metadata:
   name: kubeflow-pipelines-cache-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -1642,8 +1651,8 @@ metadata:
   name: kubeflow-pipelines-metadata-writer-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -1683,8 +1692,8 @@ metadata:
   name: ml-pipeline
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -1741,8 +1750,8 @@ metadata:
   name: ml-pipeline-persistenceagent-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - argoproj.io
@@ -1760,6 +1769,20 @@ rules:
   - get
   - list
   - watch
+- apiGroups:
+  - pipelines.kubeflow.org
+  resources:
+  - scheduledworkflows
+  - workflows
+  verbs:
+  - report
+- apiGroups:
+  - pipelines.kubeflow.org
+  resources:
+  - runs
+  verbs:
+  - reportMetrics
+  - readArtifact
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -1772,8 +1795,8 @@ metadata:
   name: ml-pipeline-scheduledworkflow-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - argoproj.io
@@ -1819,8 +1842,8 @@ metadata:
   name: ml-pipeline-ui
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -1870,8 +1893,8 @@ metadata:
   name: ml-pipeline-viewer-controller-role
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - '*'
@@ -1910,8 +1933,8 @@ metadata:
   name: pipeline-runner
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -1999,8 +2022,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-pipelines-edit: "true"
   name: aggregate-to-kubeflow-pipelines-edit
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - pipelines.kubeflow.org
@@ -2031,6 +2054,8 @@ rules:
   - retry
   - terminate
   - unarchive
+  - reportMetrics
+  - readArtifact
 - apiGroups:
   - pipelines.kubeflow.org
   resources:
@@ -2068,8 +2093,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-pipelines-view: "true"
   name: aggregate-to-kubeflow-pipelines-view
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - pipelines.kubeflow.org
@@ -2077,11 +2102,18 @@ rules:
   - pipelines
   - pipelines/versions
   - experiments
-  - runs
   - jobs
   verbs:
   - get
   - list
+- apiGroups:
+  - pipelines.kubeflow.org
+  resources:
+  - runs
+  verbs:
+  - get
+  - list
+  - readArtifact
 - apiGroups:
   - kubeflow.org
   resources:
@@ -2100,13 +2132,14 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: rbac.authorization.k8s.io|ClusterRole|default|argo-aggregate-to-admin
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
     rbac.authorization.k8s.io/aggregate-to-admin: "true"
   name: argo-aggregate-to-admin
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules:
 - apiGroups:
   - argoproj.io
@@ -2136,13 +2169,14 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: rbac.authorization.k8s.io|ClusterRole|default|argo-aggregate-to-edit
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
     rbac.authorization.k8s.io/aggregate-to-edit: "true"
   name: argo-aggregate-to-edit
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules:
 - apiGroups:
   - argoproj.io
@@ -2170,13 +2204,14 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: rbac.authorization.k8s.io|ClusterRole|default|argo-aggregate-to-view
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
     rbac.authorization.k8s.io/aggregate-to-view: "true"
   name: argo-aggregate-to-view
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules:
 - apiGroups:
   - argoproj.io
@@ -2199,12 +2234,13 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: rbac.authorization.k8s.io|ClusterRole|default|argo-cluster-role
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: argo-cluster-role
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 rules:
 - apiGroups:
   - ""
@@ -2316,8 +2352,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: kubeflow-pipelines-cache-deployer-clusterrole
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - certificates.k8s.io
@@ -2358,8 +2394,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: kubeflow-pipelines-cache-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -2402,8 +2438,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-edit: "true"
   name: kubeflow-pipelines-edit
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules: []
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -2415,8 +2451,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: kubeflow-pipelines-metadata-writer-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -2460,8 +2496,8 @@ metadata:
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"
   name: kubeflow-pipelines-view
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules: []
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -2473,8 +2509,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -2530,8 +2566,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline-persistenceagent-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - argoproj.io
@@ -2549,6 +2585,20 @@ rules:
   - get
   - list
   - watch
+- apiGroups:
+  - pipelines.kubeflow.org
+  resources:
+  - scheduledworkflows
+  - workflows
+  verbs:
+  - report
+- apiGroups:
+  - pipelines.kubeflow.org
+  resources:
+  - runs
+  verbs:
+  - reportMetrics
+  - readArtifact
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -2559,8 +2609,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline-scheduledworkflow-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - argoproj.io
@@ -2605,8 +2655,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline-ui
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - ""
@@ -2655,8 +2705,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline-viewer-controller-role
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 rules:
 - apiGroups:
   - '*'
@@ -2688,13 +2738,14 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: rbac.authorization.k8s.io|RoleBinding|default|argo-binding
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: argo-binding
   namespace: kubeflow
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2715,8 +2766,8 @@ metadata:
   name: kubeflow-pipelines-cache-binding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2737,8 +2788,8 @@ metadata:
   name: kubeflow-pipelines-cache-deployer-rolebinding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2758,8 +2809,8 @@ metadata:
   name: kubeflow-pipelines-metadata-writer-binding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2780,8 +2831,8 @@ metadata:
   name: ml-pipeline
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2801,8 +2852,8 @@ metadata:
   name: ml-pipeline-persistenceagent-binding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2822,8 +2873,8 @@ metadata:
   name: ml-pipeline-scheduledworkflow-binding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2844,8 +2895,8 @@ metadata:
   name: ml-pipeline-ui
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2865,8 +2916,8 @@ metadata:
   name: ml-pipeline-viewer-crd-binding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2886,8 +2937,8 @@ metadata:
   name: pipeline-runner-binding
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2900,12 +2951,13 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: rbac.authorization.k8s.io|ClusterRoleBinding|default|argo-binding
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: argo-binding
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -2925,8 +2977,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: kubeflow-pipelines-cache-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -2945,8 +2997,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: kubeflow-pipelines-cache-deployer-clusterrolebinding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -2965,8 +3017,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: kubeflow-pipelines-metadata-writer-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -2984,8 +3036,8 @@ metadata:
     kustomize.component: metacontroller
   name: meta-controller-cluster-role-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -3004,8 +3056,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -3024,8 +3076,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline-persistenceagent-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -3044,8 +3096,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline-scheduledworkflow-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -3065,8 +3117,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline-ui
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -3085,8 +3137,8 @@ metadata:
     application-crd-id: kubeflow-pipelines
   name: ml-pipeline-viewer-crd-binding
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -3108,8 +3160,8 @@ metadata:
   name: kfp-launcher
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 data:
@@ -3517,11 +3569,11 @@ metadata:
     app.kubernetes.io/component: ml-pipeline
     app.kubernetes.io/name: kubeflow-pipelines
     application-crd-id: kubeflow-pipelines
-  name: kubeflow-pipelines-profile-controller-code-btcch948fc
+  name: kubeflow-pipelines-profile-controller-code-hdk828hd6c
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 data:
@@ -3533,11 +3585,11 @@ metadata:
     app.kubernetes.io/component: ml-pipeline
     app.kubernetes.io/name: kubeflow-pipelines
     application-crd-id: kubeflow-pipelines
-  name: kubeflow-pipelines-profile-controller-env-mgh6th2gff
+  name: kubeflow-pipelines-profile-controller-env-5252m69c4c
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 data:
@@ -3551,8 +3603,8 @@ metadata:
   name: metadata-grpc-configmap
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 data:
@@ -3571,8 +3623,8 @@ metadata:
   name: ml-pipeline-ui-configmap
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 data:
@@ -3586,17 +3638,19 @@ metadata:
     app.kubernetes.io/component: ml-pipeline
     app.kubernetes.io/name: kubeflow-pipelines
     application-crd-id: kubeflow-pipelines
-  name: pipeline-api-server-config-f4t72426kt
+  name: pipeline-api-server-config-dc9hkg52h6
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 data:
   ConMaxLifeTime: 120s
+  DEFAULT_CACHE_STALENESS: ""
+  MAXIMUM_CACHE_STALENESS: ""
   appName: pipeline
-  appVersion: 2.0.0-alpha.3
+  appVersion: 2.0.5
   autoUpdatePipelineDefaultVersion: "true"
   bucketName: mlpipeline
   cacheDb: cachedb
@@ -3605,8 +3659,11 @@ data:
   cronScheduleTimezone: UTC
   dbHost: mysql
   dbPort: "3306"
+  dbType: mysql
   defaultPipelineRoot: ""
   mlmdDb: metadb
+  mysqlHost: mysql
+  mysqlPort: "3306"
   pipelineDb: mlpipeline
   warning: |
     1. Do not use kubectl to edit this configmap, because some values are used
@@ -3624,8 +3681,8 @@ metadata:
   name: pipeline-install-config
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 ---
 apiVersion: v1
 data:
@@ -3657,22 +3714,16 @@ data:
   containerRuntimeExecutor: pns
   executor: |
     imagePullPolicy: IfNotPresent
-    resources:
-      requests:
-        cpu: 0.01
-        memory: 32Mi
-      limits:
-        cpu: 0.5
-        memory: 512Mi
 kind: ConfigMap
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: '|ConfigMap|default|workflow-controller-configmap'
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: workflow-controller-configmap
   namespace: kubeflow
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 ---
 apiVersion: v1
 kind: Secret
@@ -3682,8 +3733,8 @@ metadata:
   name: mlpipeline-minio-artifact
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 stringData:
   accesskey: minio
   secretkey: minio123
@@ -3698,8 +3749,8 @@ metadata:
   name: mysql-secret
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 stringData:
   password: ""
   username: root
@@ -3715,8 +3766,8 @@ metadata:
   name: cache-server
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   ports:
   - port: 443
@@ -3738,8 +3789,8 @@ metadata:
   name: kubeflow-pipelines-profile-controller
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   ports:
   - name: http
@@ -3761,8 +3812,8 @@ metadata:
   name: metadata-envoy-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   ports:
   - name: md-envoy
@@ -3782,8 +3833,8 @@ metadata:
   name: metadata-grpc-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   ports:
   - name: grpc-api
@@ -3802,8 +3853,8 @@ metadata:
   name: minio-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   ports:
   - name: http
@@ -3821,8 +3872,8 @@ metadata:
     prometheus.io/port: "8888"
     prometheus.io/scheme: http
     prometheus.io/scrape: "true"
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     app.kubernetes.io/component: ml-pipeline
     app.kubernetes.io/name: kubeflow-pipelines
@@ -3856,8 +3907,8 @@ metadata:
   name: ml-pipeline-ui
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   ports:
   - name: http
@@ -3880,8 +3931,8 @@ metadata:
   name: ml-pipeline-visualizationserver
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   ports:
   - name: http
@@ -3902,8 +3953,8 @@ metadata:
   name: mysql
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   ports:
   - port: 3306
@@ -3917,12 +3968,13 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
+    internal.kpt.dev/upstream-identifier: '|Service|default|workflow-controller-metrics'
     workflows.argoproj.io/description: |
       This service is deprecated. It will be removed in v3.4.
 
       https://github.com/argoproj/argo-workflows/issues/8441
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     app: workflow-controller
     application-crd-id: kubeflow-pipelines
@@ -3941,13 +3993,48 @@ spec:
 apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: scheduling.k8s.io|PriorityClass|default|workflow-controller
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: workflow-controller
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 value: 1000000
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    application-crd-id: kubeflow-pipelines
+  name: minio-pvc
+  namespace: kubeflow
+  annotations:
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    application-crd-id: kubeflow-pipelines
+  name: mysql-pv-claim
+  namespace: kubeflow
+  annotations:
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -3960,8 +4047,8 @@ metadata:
   name: cache-deployer-deployment
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   replicas: 1
   selector:
@@ -3986,7 +4073,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: gcr.io/ml-pipeline/cache-deployer:2.0.0-alpha.3
+        image: gcr.io/ml-pipeline/cache-deployer:2.0.5
         imagePullPolicy: Always
         name: main
       restartPolicy: Always
@@ -4003,8 +4090,8 @@ metadata:
   name: cache-server
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   replicas: 1
   selector:
@@ -4030,7 +4117,20 @@ spec:
         - --db_user=$(DBCONFIG_USER)
         - --db_password=$(DBCONFIG_PASSWORD)
         - --namespace_to_watch=$(NAMESPACE_TO_WATCH)
+        - --listen_port=$(WEBHOOK_PORT)
         env:
+        - name: NAMESPACE_TO_WATCH
+          value: ""
+        - name: DEFAULT_CACHE_STALENESS
+          valueFrom:
+            configMapKeyRef:
+              key: DEFAULT_CACHE_STALENESS
+              name: pipeline-install-config
+        - name: MAXIMUM_CACHE_STALENESS
+          valueFrom:
+            configMapKeyRef:
+              key: MAXIMUM_CACHE_STALENESS
+              name: pipeline-install-config
         - name: CACHE_IMAGE
           valueFrom:
             configMapKeyRef:
@@ -4068,9 +4168,9 @@ spec:
             secretKeyRef:
               key: password
               name: mysql-secret
-        - name: NAMESPACE_TO_WATCH
-          value: ""
-        image: gcr.io/ml-pipeline/cache-server:2.0.0-alpha.3
+        - name: WEBHOOK_PORT
+          value: "8443"
+        image: gcr.io/ml-pipeline/cache-server:2.0.5
         imagePullPolicy: Always
         name: server
         ports:
@@ -4097,8 +4197,8 @@ metadata:
   name: kubeflow-pipelines-profile-controller
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   replicas: 1
   selector:
@@ -4145,7 +4245,7 @@ spec:
               name: mlpipeline-minio-artifact
         envFrom:
         - configMapRef:
-            name: kubeflow-pipelines-profile-controller-env-mgh6th2gff
+            name: kubeflow-pipelines-profile-controller-env-5252m69c4c
         image: python:3.7
         name: profile-controller
         ports:
@@ -4155,7 +4255,7 @@ spec:
           name: hooks
       volumes:
       - configMap:
-          name: kubeflow-pipelines-profile-controller-code-btcch948fc
+          name: kubeflow-pipelines-profile-controller-code-hdk828hd6c
         name: hooks
 ---
 apiVersion: apps/v1
@@ -4167,8 +4267,8 @@ metadata:
   name: metadata-envoy-deployment
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   replicas: 1
   selector:
@@ -4184,7 +4284,7 @@ spec:
         component: metadata-envoy
     spec:
       containers:
-      - image: gcr.io/ml-pipeline/metadata-envoy:2.0.0-alpha.3
+      - image: gcr.io/ml-pipeline/metadata-envoy:2.0.5
         name: container
         ports:
         - containerPort: 9090
@@ -4201,8 +4301,8 @@ metadata:
   name: metadata-grpc-deployment
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   replicas: 1
   selector:
@@ -4252,7 +4352,7 @@ spec:
             configMapKeyRef:
               key: dbPort
               name: pipeline-install-config
-        image: gcr.io/tfx-oss-public/ml_metadata_store_server:1.5.0
+        image: gcr.io/tfx-oss-public/ml_metadata_store_server:1.14.0
         livenessProbe:
           initialDelaySeconds: 3
           periodSeconds: 5
@@ -4282,8 +4382,8 @@ metadata:
   name: metadata-writer
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   replicas: 1
   selector:
@@ -4304,7 +4404,7 @@ spec:
       - env:
         - name: NAMESPACE_TO_WATCH
           value: ""
-        image: gcr.io/ml-pipeline/metadata-writer:2.0.0-alpha.3
+        image: gcr.io/ml-pipeline/metadata-writer:2.0.5
         name: main
       serviceAccountName: kubeflow-pipelines-metadata-writer
 ---
@@ -4317,8 +4417,8 @@ metadata:
   name: minio
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   selector:
     matchLabels:
@@ -4375,8 +4475,8 @@ metadata:
   name: ml-pipeline
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   selector:
     matchLabels:
@@ -4446,6 +4546,36 @@ spec:
             configMapKeyRef:
               key: ConMaxLifeTime
               name: pipeline-install-config
+        - name: DB_DRIVER_NAME
+          valueFrom:
+            configMapKeyRef:
+              key: dbType
+              name: pipeline-install-config
+        - name: DBCONFIG_MYSQLCONFIG_USER
+          valueFrom:
+            secretKeyRef:
+              key: username
+              name: mysql-secret
+        - name: DBCONFIG_MYSQLCONFIG_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: mysql-secret
+        - name: DBCONFIG_MYSQLCONFIG_DBNAME
+          valueFrom:
+            configMapKeyRef:
+              key: pipelineDb
+              name: pipeline-install-config
+        - name: DBCONFIG_MYSQLCONFIG_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: mysqlHost
+              name: pipeline-install-config
+        - name: DBCONFIG_MYSQLCONFIG_PORT
+          valueFrom:
+            configMapKeyRef:
+              key: mysqlPort
+              name: pipeline-install-config
         - name: OBJECTSTORECONFIG_ACCESSKEY
           valueFrom:
             secretKeyRef:
@@ -4458,8 +4588,8 @@ spec:
               name: mlpipeline-minio-artifact
         envFrom:
         - configMapRef:
-            name: pipeline-api-server-config-f4t72426kt
-        image: gcr.io/ml-pipeline/api-server:2.0.0-alpha.3
+            name: pipeline-api-server-config-dc9hkg52h6
+        image: gcr.io/ml-pipeline/api-server:2.0.5
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
@@ -4520,8 +4650,8 @@ metadata:
   name: ml-pipeline-persistenceagent
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   selector:
     matchLabels:
@@ -4547,14 +4677,25 @@ spec:
           value: "86400"
         - name: NUM_WORKERS
           value: "2"
-        image: gcr.io/ml-pipeline/persistenceagent:2.0.0-alpha.3
+        image: gcr.io/ml-pipeline/persistenceagent:2.0.5
         imagePullPolicy: IfNotPresent
         name: ml-pipeline-persistenceagent
         resources:
           requests:
             cpu: 120m
             memory: 500Mi
+        volumeMounts:
+        - mountPath: /var/run/secrets/kubeflow/tokens
+          name: persistenceagent-sa-token
       serviceAccountName: ml-pipeline-persistenceagent
+      volumes:
+      - name: persistenceagent-sa-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: pipelines.kubeflow.org
+              expirationSeconds: 3600
+              path: persistenceagent-sa-token
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -4567,8 +4708,8 @@ metadata:
   name: ml-pipeline-scheduledworkflow
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   selector:
     matchLabels:
@@ -4595,7 +4736,7 @@ spec:
             configMapKeyRef:
               key: cronScheduleTimezone
               name: pipeline-install-config
-        image: gcr.io/ml-pipeline/scheduledworkflow:2.0.0-alpha.3
+        image: gcr.io/ml-pipeline/scheduledworkflow:2.0.5
         imagePullPolicy: IfNotPresent
         name: ml-pipeline-scheduledworkflow
       serviceAccountName: ml-pipeline-scheduledworkflow
@@ -4611,8 +4752,8 @@ metadata:
   name: ml-pipeline-ui
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   selector:
     matchLabels:
@@ -4664,7 +4805,7 @@ spec:
               name: mlpipeline-minio-artifact
         - name: ALLOW_CUSTOM_VISUALIZATIONS
           value: "true"
-        image: gcr.io/ml-pipeline/frontend:2.0.0-alpha.3
+        image: gcr.io/ml-pipeline/frontend:2.0.5
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
@@ -4718,8 +4859,8 @@ metadata:
   name: ml-pipeline-viewer-crd
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   selector:
     matchLabels:
@@ -4741,14 +4882,9 @@ spec:
       - env:
         - name: NAMESPACE
           value: ""
-          valueFrom: null
         - name: MAX_NUM_VIEWERS
           value: "50"
-        - name: MINIO_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        image: gcr.io/ml-pipeline/viewer-crd-controller:2.0.0-alpha.3
+        image: gcr.io/ml-pipeline/viewer-crd-controller:2.0.5
         imagePullPolicy: Always
         name: ml-pipeline-viewer-crd
       serviceAccountName: ml-pipeline-viewer-crd-service-account
@@ -4764,8 +4900,8 @@ metadata:
   name: ml-pipeline-visualizationserver
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   selector:
     matchLabels:
@@ -4784,7 +4920,7 @@ spec:
         application-crd-id: kubeflow-pipelines
     spec:
       containers:
-      - image: gcr.io/ml-pipeline/visualization-server:2.0.0-alpha.3
+      - image: gcr.io/ml-pipeline/visualization-server:2.0.5
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
@@ -4829,8 +4965,8 @@ metadata:
   name: mysql
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   selector:
     matchLabels:
@@ -4846,13 +4982,14 @@ spec:
     spec:
       containers:
       - args:
-        - --ignore-db-dir=lost+found
         - --datadir
         - /var/lib/mysql
+        - --default-authentication-plugin=mysql_native_password
+        - --disable-log-bin
         env:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "true"
-        image: gcr.io/ml-pipeline/mysql:5.7-debian
+        image: gcr.io/ml-pipeline/mysql:8.0.26
         name: mysql
         ports:
         - containerPort: 3306
@@ -4873,13 +5010,14 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    internal.kpt.dev/upstream-identifier: apps|Deployment|default|workflow-controller
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
   labels:
     application-crd-id: kubeflow-pipelines
   name: workflow-controller
   namespace: kubeflow
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
 spec:
   selector:
     matchLabels:
@@ -4896,7 +5034,7 @@ spec:
         - --configmap
         - workflow-controller-configmap
         - --executor-image
-        - gcr.io/ml-pipeline/argoexec:v3.3.8-license-compliance
+        - gcr.io/ml-pipeline/argoexec:v3.3.10-license-compliance
         command:
         - workflow-controller
         env:
@@ -4905,7 +5043,7 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.name
-        image: gcr.io/ml-pipeline/workflow-controller:v3.3.8-license-compliance
+        image: gcr.io/ml-pipeline/workflow-controller:v3.3.10-license-compliance
         livenessProbe:
           failureThreshold: 3
           httpGet:
@@ -4947,8 +5085,8 @@ metadata:
   name: metacontroller
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   replicas: 1
   selector:
@@ -5003,8 +5141,8 @@ metadata:
   name: kubeflow-pipelines-profile-controller
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   childResources:
   - apiVersion: v1
@@ -5049,8 +5187,8 @@ metadata:
   name: metadata-grpc-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   host: metadata-grpc-service.kubeflow.svc.cluster.local
   trafficPolicy:
@@ -5067,8 +5205,8 @@ metadata:
   name: ml-pipeline
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   host: ml-pipeline.kubeflow.svc.cluster.local
   trafficPolicy:
@@ -5083,8 +5221,8 @@ metadata:
   name: ml-pipeline-minio
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   host: minio-service.kubeflow.svc.cluster.local
   trafficPolicy:
@@ -5099,8 +5237,8 @@ metadata:
   name: ml-pipeline-mysql
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   host: mysql.kubeflow.svc.cluster.local
   trafficPolicy:
@@ -5117,8 +5255,8 @@ metadata:
   name: ml-pipeline-ui
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   host: ml-pipeline-ui.kubeflow.svc.cluster.local
   trafficPolicy:
@@ -5135,8 +5273,8 @@ metadata:
   name: ml-pipeline-visualizationserver
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   host: ml-pipeline-visualizationserver.kubeflow.svc.cluster.local
   trafficPolicy:
@@ -5151,8 +5289,8 @@ metadata:
   name: metadata-grpc
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   gateways:
   - kubeflow-gateway
@@ -5180,8 +5318,8 @@ metadata:
   name: ml-pipeline-ui
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   gateways:
   - kubeflow-gateway
@@ -5208,8 +5346,8 @@ metadata:
   name: metadata-grpc-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   action: ALLOW
   rules:
@@ -5226,8 +5364,8 @@ metadata:
   name: minio-service
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   action: ALLOW
   rules:
@@ -5254,8 +5392,8 @@ metadata:
   name: ml-pipeline
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   rules:
   - from:
@@ -5285,8 +5423,8 @@ metadata:
   name: ml-pipeline-ui
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   rules:
   - from:
@@ -5307,8 +5445,8 @@ metadata:
   name: ml-pipeline-visualizationserver
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   rules:
   - from:
@@ -5332,8 +5470,8 @@ metadata:
   name: mysql
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   rules:
   - from:
@@ -5360,45 +5498,11 @@ metadata:
   name: service-cache-server
   namespace: kubeflow
   annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
+    kapp.k14s.io/change-group: apps.kubeflow.org/order-8
+    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-7
 spec:
   rules:
   - {}
   selector:
     matchLabels:
       app: cache-server
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  labels:
-    application-crd-id: kubeflow-pipelines
-  name: minio-pvc
-  namespace: kubeflow
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
-spec:
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  labels:
-    application-crd-id: kubeflow-pipelines
-  name: mysql-pv-claim
-  namespace: kubeflow
-  annotations:
-    kapp.k14s.io/change-group: apps.kubeflow.org/order-7
-    kapp.k14s.io/change-rule: upsert after upserting apps.kubeflow.org/order-6
-spec:
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
