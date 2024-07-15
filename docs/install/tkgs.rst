@@ -7,7 +7,7 @@ Install Kubeflow on vSphere
 This section guides you to install Kubeflow on vSphere.
 
 .. note::
-	In this section, we install Kubeflow on vSphere 1.6.1. Configurations are slightly different for other versions.
+	In this section, we install Kubeflow on vSphere 1.8.1. Configurations are slightly different for other versions.
 
 Prerequisites
 =============
@@ -57,7 +57,7 @@ Add package repository
 	kubectl create ns carvel-kubeflow
 	kubectl config set-context --current --namespace=carvel-kubeflow
 
-	kctrl package repository add --repository kubeflow-carvel-repo --url projects.registry.vmware.com/kubeflow/kubeflow-carvel-repo:1.6.1
+	kctrl package repository add --repository kubeflow-carvel-repo --url  projects.packages.broadcom.com/kubeflow/kubeflow-carvel-repo:1.8.1
 
 If you get the error `kctrl: Error: the server could not find the requested resource (post packagerepositories.packaging.carvel.dev)`, this means the Carvel Custom Resource Definitions (CRD) have not been installed.
 You can do so by running:
@@ -111,7 +111,7 @@ Install Kubeflow on vSphere package
       --wait-timeout 30m0s \
       --package-install kubeflow \
       --package kubeflow.community.tanzu.vmware.com \
-      --version 1.6.1 \
+      --version 1.8.1 \
       --values-file config.yaml
 
 This takes a few minutes, so please wait patiently. You see a "Succeeded" message in the end if the installation is successful.
@@ -297,7 +297,7 @@ To inspect values schema (configurations) of the Kubeflow on vSphere package, ru
 
 .. code-block:: shell
 
-	kctrl package available get -p kubeflow.community.tanzu.vmware.com/1.6.1 --values-schema
+	kctrl package available get -p kubeflow.community.tanzu.vmware.com/1.8.1 --values-schema
 
 We summarize some important values schema in below table.
 

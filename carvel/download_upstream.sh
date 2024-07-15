@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# set -x
-
 cd $(dirname $0)
 
 wget --quiet https://github.com/kubeflow/manifests/archive/refs/tags/v1.8.1.zip -O v1.8.1.zip
