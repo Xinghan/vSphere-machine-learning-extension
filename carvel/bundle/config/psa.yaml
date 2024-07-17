@@ -1,8 +1,11 @@
-#@ load("@ytt:data", "data")
 #@ load("@ytt:overlay", "overlay")
 
-#overlay/match by=overlay.subset({apiVersion: "v1", "kind": "Namespace"})
+#@overlay/match by=overlay.subset({"apiVersion": "v1", "kind": "Namespace"}), expects="1+"
 ---
 metadata:
+  #@overlay/match missing_ok=True
   labels:
+    #@overlay/match missing_ok=True
     pod-security.kubernetes.io/enforce: privileged
+
+                                                                                                                                                                                                                      
