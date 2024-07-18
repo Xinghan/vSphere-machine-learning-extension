@@ -254,6 +254,28 @@ To update the configuration of Kubeflow on vSphere package using an updated conf
 
 .. _values schema table:
 
+CSRF cookie
+-----------
+
+In some cases, you may occur following error when trying to create a Notebook Server:
+
+.. code-block:: text
+    Could not find CSRF cookie XSRF-TOKEN in the request
+
+To solve this issue, edit the ``jupyter-web-app-deployment`` in ``kubeflow`` namespace:
+
+.. code-block:: shell
+    kubectl edit deploy jupyter-web-app-deployment -n kubeflow
+
+Under ``spec.template.spec.containers[env]``, change ``APP_SECURE_COOKIES`` from ``false`` to ``true``.
+
+.. code-block:: yaml
+    spec:
+      containers:
+      - env:
+        - name: APP_SECURE_COOKIES
+          value: "true"
+
 Values schema
 -------------
 
