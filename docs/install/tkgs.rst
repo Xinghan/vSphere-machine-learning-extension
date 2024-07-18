@@ -269,15 +269,15 @@ To solve this issue, edit the ``jupyter-web-app-deployment`` in ``kubeflow`` nam
 
     kubectl edit deploy jupyter-web-app-deployment -n kubeflow
 
-Under ``spec.template.spec.containers[env]``, change ``APP_SECURE_COOKIES`` from ``false`` to ``true``.
+Under ``spec.template.spec.containers[env]``, change ``APP_SECURE_COOKIES`` to ``false``.
 
 .. code-block:: yaml
-    
+
     spec:
       containers:
       - env:
         - name: APP_SECURE_COOKIES
-          value: "true"
+          value: "false"
 
 Values schema
 -------------
