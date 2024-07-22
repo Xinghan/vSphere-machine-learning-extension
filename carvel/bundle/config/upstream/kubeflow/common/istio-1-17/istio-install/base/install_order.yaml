@@ -1130,26 +1130,17 @@ data:
             resources:
           {{ template "resources" . }}
             securityContext:
-              allowPrivilegeEscalation: {{ .Values.global.proxy.privileged }}
+              allowPrivilegeEscalation: false
               privileged: {{ .Values.global.proxy.privileged }}
               capabilities:
-            {{- if not .Values.istio_cni.enabled }}
-                add:
-                - NET_ADMIN
-                - NET_RAW
-            {{- end }}
                 drop:
                 - ALL
-            {{- if not .Values.istio_cni.enabled }}
-              readOnlyRootFilesystem: false
-              runAsGroup: 0
-              runAsNonRoot: false
-              runAsUser: 0
-            {{- else }}
               readOnlyRootFilesystem: true
               runAsGroup: 1337
               runAsUser: 1337
               runAsNonRoot: true
+              seccompProfile:
+                type: RuntimeDefault
             {{- end }}
           {{ end -}}
           {{- if eq (annotation .ObjectMeta `sidecar.istio.io/enableCoreDump` .Values.global.proxy.enableCoreDump) "true" }}
@@ -2486,6 +2477,9 @@ spec:
           capabilities:
             drop:
             - ALL
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
           privileged: false
           readOnlyRootFilesystem: true
         volumeMounts:

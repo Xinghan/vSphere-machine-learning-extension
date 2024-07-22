@@ -1,0 +1,8 @@
+#@ load("@ytt:overlay", "overlay")
+#@overlay/match by=overlay.subset({"kind": "ServiceAccount"}), expects="1+"
+---
+kind: ServiceAccount
+#@overlay/match missing_ok=True
+imagePullSecrets:
+#@overlay/match missing_ok=True
+- name: docker-io-secret
