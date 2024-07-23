@@ -190,13 +190,13 @@ The Kubeflow on vSphere web UI looks like below:
 Configure namespace pod security
 --------------------------------
 
-For first deployment, Kubeflow creates a namespace for user that stores resources such as notebooks and pipelines.For TKC version ``>=``1.26.0 and ``<=``1.28.0, you need to configure the pod security of this newly created user namespace before creating any new resource.
+For first deployment, Kubeflow creates a namespace for user that stores resources such as notebooks and pipelines.For TKC version ``>=`` 1.26.0 and ``<=`` 1.28.0, you need to configure the pod security of this newly created user namespace before creating any new resource.
 
 Add ``pod-security.kubernetes.io/enforce: privileged`` label to this namespace. By default, this namespace is called ``user``. 
 
 .. code-block:: shell
 
-kubectl patch namespace <user_namespace> -p "{\"metadata\":{\"labels\": {\"pod-security.kubernetes.io/enforce\": \"privileged\"}}}"
+    kubectl patch namespace <user_namespace> -p "{\"metadata\":{\"labels\": {\"pod-security.kubernetes.io/enforce\": \"privileged\"}}}"
 
 After running above patch, you are all set for creating Notebook Servers.
         
