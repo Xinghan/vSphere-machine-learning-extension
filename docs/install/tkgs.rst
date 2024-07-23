@@ -87,7 +87,12 @@ When `READY` shows `1/1`, kapp-controller is running successfully and you can ad
 Create ``config.yaml`` file
 ---------------------------
 
-Create a ``config.yaml`` file which is used in Kubeflow on vSphere installation later.
+Create a ``config.yaml`` file which is used in Kubeflow on vSphere installation later. Remember to change the ``dockerconfigjson`` value to your own Dockerhub auth secret to avoid pull limit issue.
+
+Generate the value using your own Dockerhub username and password.
+
+.. code-block:: shell
+    echo -n '{"auths":{"https://index.docker.io/v1/":{"auth":"base64(<dockerhub_username>:<dockerhub_password>)"}}}' | base64
 
 .. note::
 	This YAML file is created based on values schema of Kubeflow on vSphere package, i.e. the configurations. More details are found in :ref:`values schema table`.
@@ -100,6 +105,7 @@ Create a ``config.yaml`` file which is used in Kubeflow on vSphere installation 
 
     IP_address: ""
     CD_REGISTRATION_FLOW: True
+    dockerconfigjson: "<dockerconfigjson_base64_string>"
     EOF
 
 Install Kubeflow on vSphere package
