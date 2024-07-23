@@ -58,7 +58,7 @@ Add package repository
 	kubectl create ns carvel-kubeflow
 	kubectl config set-context --current --namespace=carvel-kubeflow
 
-	kctrl package repository add --repository kubeflow-carvel-repo --url  projects.packages.broadcom.com/kubeflow/kubeflow-carvel-repo:0.21
+	kctrl package repository add --repository kubeflow-carvel-repo --url  projects.packages.broadcom.com/kubeflow/kubeflow-carvel-repo:1.8.1
 
 If you get the error `kctrl: Error: the server could not find the requested resource (post packagerepositories.packaging.carvel.dev)`, this means the Carvel Custom Resource Definitions (CRDs) have not been installed.
 You can solve this error by running:
@@ -87,7 +87,13 @@ When `READY` shows `1/1`, kapp-controller is running successfully and you can ad
 Create ``config.yaml`` file
 ---------------------------
 
-Create a ``config.yaml`` file which is used in Kubeflow on vSphere installation later.
+Create a ``config.yaml`` file which is used in Kubeflow on vSphere installation later. Remember to change the ``dockerconfigjson`` value to your own Dockerhub auth secret to avoid pull limit issue.
+
+Generate the value using your own Dockerhub username and password.
+
+.. code-block:: shell
+    
+    echo -n '{"auths":{"https://index.docker.io/v1/":{"auth":"base64(<dockerhub_username>:<dockerhub_password>)"}}}' | base64
 
 .. note::
 	This YAML file is created based on values schema of Kubeflow on vSphere package, i.e. the configurations. More details are found in :ref:`values schema table`.
@@ -100,6 +106,7 @@ Create a ``config.yaml`` file which is used in Kubeflow on vSphere installation 
 
     IP_address: ""
     CD_REGISTRATION_FLOW: True
+    dockerconfigjson: "<dockerconfigjson_base64_string>"
     EOF
 
 Install Kubeflow on vSphere package
@@ -186,6 +193,21 @@ For the first time you login after deployment, you are guided to namespace creat
 The Kubeflow on vSphere web UI looks like below:
 
     .. image:: ../_static/install-tkgs-home.png
+
+.. _configure namespace pod security:
+
+Configure namespace pod security
+--------------------------------
+
+For first deployment, Kubeflow creates a namespace for user that stores resources such as notebooks and pipelines.For TKC version ``>=1.26.0`` and ``<=1.28.0``, you need to configure the pod security of this newly created user namespace before creating any new resource.
+
+Add ``pod-security.kubernetes.io/enforce: privileged`` label to this namespace. By default, this namespace is called ``user``. 
+
+.. code-block:: shell
+
+    kubectl patch namespace <user_namespace> -p "{\"metadata\":{\"labels\": {\"pod-security.kubernetes.io/enforce\": \"privileged\"}}}"
+
+After running above patch, you are all set for creating Notebook Servers.
         
 
 Troubleshooting
@@ -278,6 +300,11 @@ Under ``spec.template.spec.containers[env]``, change ``APP_SECURE_COOKIES`` to `
       - env:
         - name: APP_SECURE_COOKIES
           value: "false"
+
+Violate PodSecurity "restricted:latest"
+---------------------------------------
+
+When trying to create resources such as Notebook Server, if you meet PodSecurity violation error, please double check if you :ref:`configure namespace pod security`.
 
 Values schema
 -------------
