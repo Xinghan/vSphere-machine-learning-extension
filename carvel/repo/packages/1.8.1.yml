@@ -12,7 +12,7 @@ spec:
     spec:
       fetch:
       - imgpkgBundle:
-          image: xinghan/kubeflow-carvel-testing:0.21
+          image: mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing:0.21
       template:
       - ytt:
           paths:
@@ -136,16 +136,7 @@ spec:
                   redirectURIs: ["/authservice/oidc/callback"]
                   name: 'Dex Login Application'
                   secretEnv: OIDC_CLIENT_SECRET
-        Docker:
-          type: object
-          additionalProperties: false
-          description: Docker service account
-          properties:
-            use_private:
-              type: boolean
-              description: If use private docker account
-              default: false
-            dockerconfigjson:
-              type: string
-              description: docker config json
-              default: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJ4aW5naGFuIiwicGFzc3dvcmQiOiJjMXgyaDM0MTk4NTAyMDghIiwiZW1haWwiOiJ4aW5naGFuLmN1aUBnbWFpbC5jb20iLCJhdXRoIjoiYmFzZTY0KHVzZXJuYW1lOnBhc3N3b3JkKSJ9fX0=
+        dockerconfigjson:
+          type: string
+          description: docker config json
+          default: ""

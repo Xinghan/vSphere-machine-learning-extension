@@ -53,10 +53,7 @@ Dex:
       name: 'Dex Login Application'
       secretEnv: OIDC_CLIENT_SECRET
 
-Docker:
-  use_private: False
-  #! '{"auths":{"https://index.docker.io/v1/":{"username":"xinghan","password":"c1x2h3419850208!","email":"xinghan.cui@gmail.com","auth":"base64(username:password)"}}}' | base64
-  dockerconfigjson: "eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJ4aW5naGFuIiwicGFzc3dvcmQiOiJjMXgyaDM0MTk4NTAyMDghIiwiZW1haWwiOiJ4aW5naGFuLmN1aUBnbWFpbC5jb20iLCJhdXRoIjoiYmFzZTY0KHVzZXJuYW1lOnBhc3N3b3JkKSJ9fX0="
+dockerconfigjson: ""
 
 
 
