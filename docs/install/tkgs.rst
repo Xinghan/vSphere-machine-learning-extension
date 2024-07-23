@@ -58,7 +58,7 @@ Add package repository
 	kubectl create ns carvel-kubeflow
 	kubectl config set-context --current --namespace=carvel-kubeflow
 
-	kctrl package repository add --repository kubeflow-carvel-repo --url  projects.packages.broadcom.com/kubeflow/kubeflow-carvel-repo:0.21
+	kctrl package repository add --repository kubeflow-carvel-repo --url  projects.packages.broadcom.com/kubeflow/kubeflow-carvel-repo:1.8.1
 
 If you get the error `kctrl: Error: the server could not find the requested resource (post packagerepositories.packaging.carvel.dev)`, this means the Carvel Custom Resource Definitions (CRDs) have not been installed.
 You can solve this error by running:
