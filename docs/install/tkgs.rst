@@ -187,6 +187,8 @@ The Kubeflow on vSphere web UI looks like below:
 
     .. image:: ../_static/install-tkgs-home.png
 
+.. _configure namespace pod security:
+
 Configure namespace pod security
 --------------------------------
 
@@ -291,6 +293,11 @@ Under ``spec.template.spec.containers[env]``, change ``APP_SECURE_COOKIES`` to `
       - env:
         - name: APP_SECURE_COOKIES
           value: "false"
+
+Violate PodSecurity "restricted:latest"
+---------------------------------------
+
+When trying to create resources such as Notebook Server, if you meet PodSecurity violation error, please double check if you :ref:`configure namespace pod security`.
 
 Values schema
 -------------
