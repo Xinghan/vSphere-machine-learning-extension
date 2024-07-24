@@ -31,7 +31,7 @@ This tutorial offers a comprehensive, step-by-step guide for demonstrating the u
 Prerequisites
 --------------
 
-- Kubeflow on vSphere v1.6.1
+- Kubeflow on vSphere v1.8.1
 - Deployed an additional FATE cluster with the ID 10000 or set both collaborative parties to 9999 (refer to the comments in the code example).
 
 -------------------
