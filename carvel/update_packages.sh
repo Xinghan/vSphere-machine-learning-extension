@@ -4,15 +4,11 @@
 
 cd $(dirname $0)
 
-# export IMGPKG_PACKAGE=projects.registry.vmware.com/kubeflow/kubeflow-carvel-testing:0.12
-# export IMGPKG_REPO=projects.registry.vmware.com/kubeflow/kubeflow-carvel-repo:0.12
 
 # this is where to put the images, however, we do not have the access yet. You can edit this to enable vmware.com repo.
-export IMGPKG_PACKAGE=mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing:0.21
-export IMGPKG_REPO=mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-repo:0.21
+export IMGPKG_PACKAGE=mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing:1.8.1
+export IMGPKG_REPO=mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-repo:1.8.1
 
-# export IMGPKG_PACKAGE=harbor-isvlab.liuqi.me/library/kubeflow-carvel-testing:0.12
-# export IMGPKG_REPO=harbor-isvlab.liuqi.me/library/kubeflow-carvel-repo:0.12
 
 echo 0. Create preview of yaml results at kubeflow_manifest_preview.yaml
 ytt --file bundle/config > kubeflow_manifest_preview.yaml
