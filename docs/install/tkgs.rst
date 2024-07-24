@@ -93,7 +93,7 @@ Generate the value using your own Dockerhub username and password.
 
 .. code-block:: shell
     
-    echo -n '{"auths":{"https://index.docker.io/v1/":{"auth":"base64(<dockerhub_username>:<dockerhub_password>)"}}}' | base64
+    echo -n '{"auths":{"https://index.docker.io/v1/":{"auth":<base64_string_dockerhub-username:dockerhubpassword>}}}' | base64
 
 .. note::
 	This YAML file is created based on values schema of Kubeflow on vSphere package, i.e. the configurations. More details are found in :ref:`values schema table`.
