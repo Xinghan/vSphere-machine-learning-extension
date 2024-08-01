@@ -2,10 +2,10 @@
 apiVersion: imgpkg.carvel.dev/v1alpha1
 images:
 - annotations:
-    kbld.carvel.dev/id: mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing:0.21
+    kbld.carvel.dev/id: mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing:1.8.1
     kbld.carvel.dev/origins: |
       - resolved:
-          tag: "0.21"
-          url: mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing:0.21
-  image: mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing@sha256:1e34d1716c93d3f1db52008efaae22964461e34a72ccaa4e18f82d92425a74df
+          tag: 1.8.1
+          url: mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing:1.8.1
+  image: mle-docker-prod-local.usw5.packages.broadcom.com/kubeflow/kubeflow-carvel-testing@sha256:6e89b553081a1e2fdcfe774d0ea98db6e06b227864d12da371f7471e7d0d2175
 kind: ImagesLock
